@@ -1,0 +1,2126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Service.OceanFreightFclPortActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/home_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/servicename"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ocean Freight (FCL - Port to Port)"
+                android:textColor="@color/white"
+                android:textSize="18dp">
+
+            </TextView>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nested_parent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:isScrollContainer="true"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/home_toolbar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/grey">
+
+                <TextView
+                    android:id="@+id/quotation_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:text="Quotation required from (Please Select);*"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:visibility="visible" />
+
+                <RadioGroup
+                    android:id="@+id/quotation_radiogroup"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="16dp"
+                    android:orientation="vertical"
+                    android:padding="2dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/quotation_text"
+                    app:layout_constraintTop_toBottomOf="@+id/quotation_text"
+                    tools:ignore="RedundantNamespace">
+
+                    <RadioButton
+                        android:id="@+id/any_vendor_radio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Any Vendor"
+                        android:textSize="16dp"
+                        tools:ignore="OnClick" />
+
+                    <RadioButton
+                        android:id="@+id/platinum_radio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Platinum"
+                        android:textSize="16dp"
+                        tools:ignore="OnClick" />
+                    <RadioButton
+                        android:id="@+id/gold_radio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gold"
+                        android:textSize="16dp"
+                        tools:ignore="OnClick" />
+
+                    <RadioButton
+                        android:id="@+id/silver_radio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Silver"
+                        android:textSize="16dp"
+                        tools:ignore="OnClick" />
+                    <RadioButton
+                        android:id="@+id/standard_radio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Standard"
+                        android:textSize="16dp"
+                        tools:ignore="OnClick" />
+
+                </RadioGroup>
+
+
+                <TextView
+                    android:id="@+id/customer_name_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Customer Name*"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/quotation_radiogroup"
+                    app:layout_constraintTop_toBottomOf="@+id/quotation_radiogroup"
+                    android:visibility="visible" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/textInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/form_shape"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/customer_name_text"
+                    app:layout_constraintTop_toBottomOf="@+id/customer_name_text">
+
+                    <EditText
+                        android:id="@+id/customer_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@null"
+                        android:singleLine="true"
+                        android:textColorHint="@color/black"
+                        android:textSize="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </EditText>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/customer_address_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Customer Address*"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/textInputLayout1"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/form_shape"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+                    app:layout_constraintStart_toStartOf="@+id/customer_name_text"
+                    app:layout_constraintTop_toBottomOf="@+id/customer_address_text">
+
+                    <EditText
+                        android:id="@+id/customer_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@null"
+                        android:singleLine="true"
+                        android:textColorHint="@color/black"
+                        android:textSize="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </EditText>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/mobile_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Mobile*"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="@+id/textInputLayout1"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout1" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/textInputLayout2"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/form_shape"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="@+id/textInputLayout1"
+                    app:layout_constraintStart_toStartOf="@+id/mobile_text"
+                    app:layout_constraintTop_toBottomOf="@+id/mobile_text">
+
+                    <EditText
+                        android:id="@+id/mobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@null"
+                        android:inputType="number"
+                        android:maxEms="10"
+                        android:maxLength="10"
+                        android:singleLine="true"
+                        android:textColorHint="@color/black"
+                        android:textSize="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </EditText>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/email_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Email*"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/textInputLayout3"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/form_shape"
+                    app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
+                    app:layout_constraintStart_toStartOf="@+id/email_text"
+                    app:layout_constraintTop_toBottomOf="@+id/email_text">
+
+                    <EditText
+                        android:id="@+id/email"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@null"
+                        android:singleLine="true"
+                        android:textColorHint="@color/black"
+                        android:textSize="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </EditText>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/web_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Website*"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/mobile_text"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/textInputLayout4"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/form_shape"
+                    app:layout_constraintEnd_toEndOf="@+id/textInputLayout3"
+                    app:layout_constraintStart_toStartOf="@+id/web_text"
+                    app:layout_constraintTop_toBottomOf="@+id/web_text">
+
+                    <EditText
+                        android:id="@+id/website"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@null"
+                        android:singleLine="true"
+                        android:textColorHint="@color/black"
+                        android:textSize="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </EditText>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/description_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Description*"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/textInputLayout4"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
+                    tools:visibility="visible" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/textInputLayout6"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/form_shape"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="@+id/textInputLayout4"
+                    app:layout_constraintStart_toStartOf="@+id/description_text"
+                    app:layout_constraintTop_toBottomOf="@+id/description_text">
+
+                    <EditText
+                        android:id="@+id/description"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@null"
+                        android:singleLine="true"
+                        android:textColorHint="@color/black"
+                        android:textSize="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </EditText>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/hazardous_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Hazardous Material*"
+                    android:visibility="visible"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/textInputLayout6"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout6" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/textInputLayout17"
+                    android:layout_width="100dp"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="5dp"
+                    android:visibility="visible"
+                    android:background="@drawable/form_shape"
+                    app:layout_constraintStart_toStartOf="@+id/hazardous_text"
+                    app:layout_constraintTop_toBottomOf="@+id/hazardous_text">
+
+                    <TextView
+                        android:id="@+id/hazardous"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:singleLine="true"
+                        android:text="No"
+                        android:gravity="center"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </TextView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/hazardous_textt"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:text="(We are unable to accept hazardous material for shipment)"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="@+id/textInputLayout17"
+                    app:layout_constraintEnd_toEndOf="@+id/textInputLayout6"
+                    app:layout_constraintStart_toEndOf="@+id/textInputLayout17"
+                    app:layout_constraintTop_toTopOf="@+id/textInputLayout17">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/origin_address_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Pick Up Address*"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/web_text"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout17"
+                    tools:visibility="visible" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/textInputLayout7"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/form_shape"
+                    app:layout_constraintEnd_toEndOf="@+id/textInputLayout6"
+                    app:layout_constraintStart_toStartOf="@+id/textInputLayout6"
+                    app:layout_constraintTop_toBottomOf="@+id/origin_address_text">
+
+                    <EditText
+                        android:id="@+id/pick_up_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@null"
+                        android:singleLine="true"
+                        android:textColorHint="@color/black"
+                        android:textSize="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </EditText>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/destination_address_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Delivery Address*"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/origin_address_text"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout7"
+                    tools:visibility="visible" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/textInputLayout8"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/form_shape"
+                    app:layout_constraintEnd_toEndOf="@+id/textInputLayout7"
+                    app:layout_constraintStart_toStartOf="@+id/textInputLayout7"
+                    app:layout_constraintTop_toBottomOf="@+id/destination_address_text">
+
+                    <EditText
+                        android:id="@+id/delivery_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@null"
+                        android:singleLine="true"
+                        android:textColorHint="@color/black"
+                        android:textSize="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </EditText>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/gross_weight_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Gross Weight*"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/destination_address_text"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout8"
+                    tools:visibility="visible" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/textInputLayout13"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/form_shape"
+                    app:layout_constraintEnd_toEndOf="@+id/textInputLayout8"
+                    app:layout_constraintStart_toStartOf="@+id/textInputLayout8"
+                    app:layout_constraintTop_toBottomOf="@+id/gross_weight_text">
+
+                    <EditText
+                        android:id="@+id/gross_weight"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@null"
+                        android:singleLine="true"
+                        android:textColorHint="@color/black"
+                        android:textSize="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </EditText>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/net_weight_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Net Weight*"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/destination_address_text"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout13"
+                    tools:visibility="visible" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/textInputLayout14"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/form_shape"
+                    app:layout_constraintEnd_toEndOf="@+id/textInputLayout13"
+                    app:layout_constraintStart_toStartOf="@+id/textInputLayout13"
+                    app:layout_constraintTop_toBottomOf="@+id/net_weight_text">
+
+                    <EditText
+                        android:id="@+id/net_weight"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@null"
+                        android:singleLine="true"
+                        android:textColorHint="@color/black"
+                        android:textSize="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </EditText>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/each_box_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Provide each Box / Carton Dimension, as below*"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/destination_address_text"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout14"
+                    tools:visibility="visible" />
+
+                <HorizontalScrollView
+                    android:id="@+id/horizontalScrollView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="8dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="@+id/textInputLayout8"
+                    app:layout_constraintStart_toStartOf="@+id/each_box_text"
+                    app:layout_constraintTop_toBottomOf="@+id/each_box_text">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/parent"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:background="@color/grey"
+                            app:layout_constraintStart_toStartOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/box_number_parent"
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:layout_gravity="center_vertical">
+
+                                <TextView
+                                    android:id="@+id/box_number"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Box Number"
+                                    android:textColor="@color/black"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="4dp"
+                                android:background="@color/white" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/length_parent"
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="4dp">
+
+                                <TextView
+                                    android:id="@+id/length_cm"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Length (Cm)"
+                                    android:textColor="@color/black"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="4dp"
+                                android:background="@color/white"
+                                android:visibility="visible" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/width_parent"
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:visibility="visible"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="4dp">
+
+                                <TextView
+                                    android:id="@+id/width_cm"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Width (Cm)"
+                                    android:textColor="@color/black"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="4dp"
+                                android:background="@color/white" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/height_parent"
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:visibility="visible"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="4dp">
+
+                                <TextView
+                                    android:id="@+id/height_cm"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Height(Cm)"
+                                    android:textColor="@color/black"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:visibility="visible"
+                                android:layout_marginStart="4dp"
+                                android:background="@color/white" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/gross_weight_parent"
+                                android:layout_width="160dp"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="4dp">
+
+                                <TextView
+                                    android:id="@+id/gross_weight1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Gross Weight (Gms)"
+                                    android:textColor="@color/black"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="4dp"
+                                android:background="@color/white" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/no_of_box_parent"
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="4dp">
+
+                                <TextView
+                                    android:id="@+id/no_of_box"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="No Of Box"
+                                    android:textColor="@color/black"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/parent1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="visible"
+                            android:layout_gravity="center_vertical"
+                            android:background="@color/grey"
+                            android:layout_below="@+id/parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/box_number_parent1"
+                                android:layout_width="124dp"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:background="@drawable/table_shape"
+                                android:layout_gravity="center_vertical">
+
+                                <EditText
+                                    android:id="@+id/box_number1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:textColor="@color/black"
+                                    android:background="@null"
+                                    android:singleLine="true"
+                                    android:inputType="number"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                </EditText>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:visibility="gone"
+                                android:layout_marginStart="4dp"
+                                android:background="@color/black" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/length_parent1"
+                                android:layout_width="124dp"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:background="@drawable/table_shape"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="4dp">
+
+                                <EditText
+                                    android:id="@+id/length_cm1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:background="@null"
+                                    android:singleLine="true"
+                                    android:inputType="number"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                </EditText>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="4dp"
+                                android:background="@color/black"
+                                android:visibility="gone" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/width_parent1"
+                                android:layout_width="124dp"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:background="@drawable/table_shape"
+                                android:visibility="visible"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="4dp">
+
+                                <EditText
+                                    android:id="@+id/width_cm1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:background="@null"
+                                    android:singleLine="true"
+                                    android:inputType="number"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                </EditText>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:visibility="gone"
+                                android:layout_marginStart="4dp"
+                                android:background="@color/black" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/height_parent1"
+                                android:layout_width="124dp"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:background="@drawable/table_shape"
+                                android:visibility="visible"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="4dp">
+
+                                <EditText
+                                    android:id="@+id/height_cm1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:background="@null"
+                                    android:singleLine="true"
+                                    android:inputType="number"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                </EditText>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:visibility="gone"
+                                android:layout_marginStart="4dp"
+                                android:background="@color/black" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/gross_weight_parent1"
+                                android:layout_width="164dp"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:background="@drawable/table_shape"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="4dp">
+
+                                <EditText
+                                    android:id="@+id/gross_weight_cm1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:background="@null"
+                                    android:singleLine="true"
+                                    android:inputType="number"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                </EditText>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:visibility="gone"
+                                android:layout_marginStart="4dp"
+                                android:background="@color/black" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/no_of_box_parent1"
+                                android:layout_width="124dp"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:background="@drawable/table_shape"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="4dp">
+
+                                <EditText
+                                    android:id="@+id/no_of_box1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:background="@null"
+                                    android:singleLine="true"
+                                    android:inputType="number"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                </EditText>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view_parent"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:visibility="visible"
+                            android:layout_below="@+id/parent1"
+                            android:layout_marginTop="1dp"
+                            android:background="@color/black" />
+
+                        <LinearLayout
+                            android:id="@+id/parent2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:visibility="gone"
+                            android:layout_gravity="center_vertical"
+                            android:background="@color/grey"
+                            android:layout_below="@+id/view_parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/box_number_parent2"
+                                android:layout_width="124dp"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:background="@drawable/table_shape"
+                                android:layout_gravity="center_vertical">
+
+                                <EditText
+                                    android:id="@+id/box_number2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:background="@null"
+                                    android:singleLine="true"
+                                    android:inputType="number"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                </EditText>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:visibility="gone"
+                                android:layout_marginStart="4dp"
+                                android:background="@color/black" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/length_parent2"
+                                android:layout_width="124dp"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:background="@drawable/table_shape"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="4dp">
+
+                                <EditText
+                                    android:id="@+id/length_cm2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:background="@null"
+                                    android:singleLine="true"
+                                    android:inputType="number"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                </EditText>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="4dp"
+                                android:background="@color/black"
+                                android:visibility="gone"/>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/width_parent2"
+                                android:layout_width="124dp"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:background="@drawable/table_shape"
+                                android:visibility="visible"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="4dp">
+
+                                <EditText
+                                    android:id="@+id/width_cm2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:background="@null"
+                                    android:singleLine="true"
+                                    android:inputType="number"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                </EditText>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:visibility="gone"
+                                android:layout_marginStart="4dp"
+                                android:background="@color/black" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/height_parent2"
+                                android:layout_width="124dp"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:background="@drawable/table_shape"
+                                android:visibility="visible"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="4dp">
+
+                                <EditText
+                                    android:id="@+id/height_cm2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:background="@null"
+                                    android:singleLine="true"
+                                    android:inputType="number"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                </EditText>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:visibility="gone"
+                                android:layout_marginStart="4dp"
+                                android:background="@color/black" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/gross_weight_parent2"
+                                android:layout_width="164dp"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:background="@drawable/table_shape"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="4dp">
+
+                                <EditText
+                                    android:id="@+id/gross_weight_cm2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:background="@null"
+                                    android:singleLine="true"
+                                    android:inputType="number"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                </EditText>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:visibility="gone"
+                                android:layout_marginStart="4dp"
+                                android:background="@color/black" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/no_of_box_parent2"
+                                android:layout_width="124dp"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:background="@drawable/table_shape"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="4dp">
+
+                                <EditText
+                                    android:id="@+id/no_of_box2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:background="@null"
+                                    android:singleLine="true"
+                                    android:inputType="number"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                </EditText>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view_parent1"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:visibility="visible"
+                            android:layout_below="@+id/parent2"
+                            android:layout_marginTop="1dp"
+                            android:background="@color/black" />
+
+                        <LinearLayout
+                            android:id="@+id/parent3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:visibility="gone"
+                            android:layout_gravity="center_vertical"
+                            android:background="@color/grey"
+                            android:layout_below="@+id/view_parent1">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/box_number_parent3"
+                                android:layout_width="124dp"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:background="@drawable/table_shape"
+                                android:layout_gravity="center_vertical">
+
+                                <EditText
+                                    android:id="@+id/box_number3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:background="@null"
+                                    android:singleLine="true"
+                                    android:inputType="number"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                </EditText>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:visibility="gone"
+                                android:layout_marginStart="4dp"
+                                android:background="@color/black" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/length_parent3"
+                                android:layout_width="124dp"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:background="@drawable/table_shape"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="4dp">
+
+                                <EditText
+                                    android:id="@+id/length_cm3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:background="@null"
+                                    android:singleLine="true"
+                                    android:inputType="number"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                </EditText>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="4dp"
+                                android:background="@color/black"
+                                android:visibility="gone" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/width_parent3"
+                                android:layout_width="124dp"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:background="@drawable/table_shape"
+                                android:visibility="visible"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="4dp">
+
+                                <EditText
+                                    android:id="@+id/width_cm3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:background="@null"
+                                    android:singleLine="true"
+                                    android:inputType="number"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                </EditText>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:visibility="gone"
+                                android:layout_marginStart="4dp"
+                                android:background="@color/black" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/height_parent3"
+                                android:layout_width="124dp"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:background="@drawable/table_shape"
+                                android:visibility="visible"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="4dp">
+
+                                <EditText
+                                    android:id="@+id/height_cm3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:background="@null"
+                                    android:singleLine="true"
+                                    android:inputType="number"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                </EditText>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:visibility="gone"
+                                android:layout_marginStart="4dp"
+                                android:background="@color/black" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/gross_weight_parent3"
+                                android:layout_width="164dp"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:background="@drawable/table_shape"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="4dp">
+
+                                <EditText
+                                    android:id="@+id/gross_weight_cm3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:background="@null"
+                                    android:singleLine="true"
+                                    android:inputType="number"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                </EditText>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:visibility="gone"
+                                android:layout_marginStart="4dp"
+                                android:background="@color/black" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/no_of_box_parent3"
+                                android:layout_width="124dp"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:background="@drawable/table_shape"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="4dp">
+
+                                <EditText
+                                    android:id="@+id/no_of_box3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:background="@null"
+                                    android:singleLine="true"
+                                    android:inputType="number"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                </EditText>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/view_parent2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:visibility="visible"
+                            android:layout_below="@+id/parent3"
+                            android:layout_marginTop="1dp"
+                            android:background="@color/black" />
+
+                        <LinearLayout
+                            android:id="@+id/parent4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:visibility="gone"
+                            android:layout_gravity="center_vertical"
+                            android:background="@color/grey"
+                            android:layout_below="@+id/view_parent2">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/box_number_parent4"
+                                android:layout_width="124dp"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:background="@drawable/table_shape"
+                                android:layout_gravity="center_vertical">
+
+                                <EditText
+                                    android:id="@+id/box_number4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:background="@null"
+                                    android:singleLine="true"
+                                    android:inputType="number"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                </EditText>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:visibility="gone"
+                                android:layout_marginStart="4dp"
+                                android:background="@color/black" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/length_parent4"
+                                android:layout_width="124dp"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:background="@drawable/table_shape"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="4dp">
+
+                                <EditText
+                                    android:id="@+id/length_cm4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:background="@null"
+                                    android:singleLine="true"
+                                    android:inputType="number"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                </EditText>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="4dp"
+                                android:background="@color/black"
+                                android:visibility="gone" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/width_parent4"
+                                android:layout_width="124dp"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:background="@drawable/table_shape"
+                                android:visibility="visible"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="4dp">
+
+                                <EditText
+                                    android:id="@+id/width_cm4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:background="@null"
+                                    android:singleLine="true"
+                                    android:inputType="number"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                </EditText>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:visibility="gone"
+                                android:layout_marginStart="4dp"
+                                android:background="@color/black" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/height_parent4"
+                                android:layout_width="124dp"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:background="@drawable/table_shape"
+                                android:visibility="visible"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="4dp">
+
+                                <EditText
+                                    android:id="@+id/height_cm4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:background="@null"
+                                    android:singleLine="true"
+                                    android:inputType="number"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                </EditText>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:visibility="gone"
+                                android:layout_marginStart="4dp"
+                                android:background="@color/black" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/gross_weight_parent4"
+                                android:layout_width="164dp"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:background="@drawable/table_shape"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="4dp">
+
+                                <EditText
+                                    android:id="@+id/gross_weight_cm4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:background="@null"
+                                    android:singleLine="true"
+                                    android:inputType="number"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                </EditText>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:visibility="gone"
+                                android:layout_marginStart="4dp"
+                                android:background="@color/black" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/no_of_box_parent4"
+                                android:layout_width="124dp"
+                                android:layout_height="wrap_content"
+                                android:padding="5dp"
+                                android:background="@drawable/table_shape"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="4dp">
+
+                                <EditText
+                                    android:id="@+id/no_of_box4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text=""
+                                    android:textColor="@color/black"
+                                    android:background="@null"
+                                    android:singleLine="true"
+                                    android:inputType="number"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                </EditText>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </HorizontalScrollView>
+
+                <TextView
+                    android:id="@+id/add_more"
+                    android:layout_width="120dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/colorSecondary"
+                    android:gravity="center"
+                    android:text="Add more"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/textInputLayout8"
+                    app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+                <TextView
+                    android:id="@+id/cv_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Upload Box information*"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/textInputLayout8"
+                    app:layout_constraintTop_toBottomOf="@+id/add_more" />
+
+                <TextView
+                    android:id="@+id/cv_type_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="(File Type: pdf)"
+                    android:textColor="@color/red"
+                    android:textSize="16dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/cv_text"
+                    app:layout_constraintStart_toEndOf="@+id/cv_text"
+                    app:layout_constraintTop_toTopOf="@+id/cv_text" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/upload_cv_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/cv_shape"
+                    android:elevation="8dp"
+                    app:layout_constraintEnd_toEndOf="@+id/textInputLayout8"
+                    app:layout_constraintStart_toStartOf="@+id/cv_text"
+                    app:layout_constraintTop_toBottomOf="@+id/cv_text">
+
+                    <TextView
+                        android:id="@+id/upload_box"
+                        android:layout_width="150dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="12dp"
+                        android:background="@drawable/file_shape"
+                        android:gravity="center"
+                        android:hint="Choose file"
+                        android:textColor="@color/green"
+                        android:textSize="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/file_name"
+                        android:layout_width="180dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="6dp"
+                        android:gravity="center_vertical"
+                        android:hint="No File Choosen"
+                        android:textColor="@color/green"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textSize="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/upload_box"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/type_of_containers_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Type of Containers*"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/net_weight_text"
+                    app:layout_constraintTop_toBottomOf="@+id/upload_cv_layout"
+                    tools:visibility="visible" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/textInputLayout15"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/form_shape"
+                    app:layout_constraintEnd_toEndOf="@+id/textInputLayout14"
+                    app:layout_constraintStart_toStartOf="@+id/textInputLayout14"
+                    app:layout_constraintTop_toBottomOf="@+id/type_of_containers_text">
+
+                    <EditText
+                        android:id="@+id/type_of_containers"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@null"
+                        android:singleLine="true"
+                        android:textColorHint="@color/black"
+                        android:textSize="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </EditText>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/number_of_containers_required_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Number of Containers Required*"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/type_of_containers_text"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout15"
+                    tools:visibility="visible" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/textInputLayout16"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/form_shape"
+                    app:layout_constraintEnd_toEndOf="@+id/textInputLayout15"
+                    app:layout_constraintStart_toStartOf="@+id/textInputLayout15"
+                    app:layout_constraintTop_toBottomOf="@+id/number_of_containers_required_text">
+
+                    <EditText
+                        android:id="@+id/number_of_containers_required"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@null"
+                        android:inputType="number"
+                        android:singleLine="true"
+                        android:textColorHint="@color/black"
+                        android:textSize="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </EditText>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/shipment_readyness_date_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Shipment Readyness Date*"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/number_of_containers_required_text"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout16" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/textInputLayout9"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/form_shape"
+                    app:layout_constraintEnd_toEndOf="@+id/textInputLayout8"
+                    app:layout_constraintStart_toStartOf="@+id/textInputLayout8"
+                    app:layout_constraintTop_toBottomOf="@+id/shipment_readyness_date_text">
+
+                    <EditText
+                        android:id="@+id/shipment_readyness_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@null"
+                        android:singleLine="true"
+                        android:inputType="date"
+                        android:hint="YYYY-MM-DD"
+                        android:focusable="false"
+                        android:textColorHint="@color/grey"
+                        android:textSize="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </EditText>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/deadline_for_quote_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Deadline for Quote*"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/shipment_readyness_date_text"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout9" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/textInputLayout10"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/form_shape"
+                    app:layout_constraintEnd_toEndOf="@+id/textInputLayout9"
+                    app:layout_constraintStart_toStartOf="@+id/textInputLayout9"
+                    app:layout_constraintTop_toBottomOf="@+id/deadline_for_quote_text">
+
+                    <EditText
+                        android:id="@+id/deadline_for_quote"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@null"
+                        android:singleLine="true"
+                        android:inputType="date"
+                        android:hint="YYYY-MM-DD"
+                        android:focusable="false"
+                        android:textColorHint="@color/grey"
+                        android:textSize="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </EditText>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/customer_decision_date_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Customer Decision Date*"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/deadline_for_quote_text"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout10" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/textInputLayout11"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/form_shape"
+                    app:layout_constraintEnd_toEndOf="@+id/textInputLayout10"
+                    app:layout_constraintStart_toStartOf="@+id/textInputLayout10"
+                    app:layout_constraintTop_toBottomOf="@+id/customer_decision_date_text">
+
+                    <EditText
+                        android:id="@+id/customer_decision_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@null"
+                        android:singleLine="true"
+                        android:inputType="date"
+                        android:hint="YYYY-MM-DD"
+                        android:focusable="false"
+                        android:textColorHint="@color/grey"
+                        android:textSize="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </EditText>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/special_istructions_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Special Instructions*"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/customer_decision_date_text"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout11" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/textInputLayout12"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/form_shape"
+                    app:layout_constraintEnd_toEndOf="@+id/textInputLayout11"
+                    app:layout_constraintStart_toStartOf="@+id/textInputLayout11"
+                    app:layout_constraintTop_toBottomOf="@+id/special_istructions_text">
+
+                    <EditText
+                        android:id="@+id/special_istructions"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@null"
+                        android:singleLine="true"
+                        android:textColorHint="@color/black"
+                        android:textSize="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </EditText>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/submit_enquery"
+                    android:layout_width="180dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/colorSecondary"
+                    android:gravity="center"
+                    android:text="Submit Enquiry"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/textInputLayout12"
+                    app:layout_constraintStart_toStartOf="@+id/textInputLayout12"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout12" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <FrameLayout
+            android:id="@+id/progress"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/home_toolbar">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+        </FrameLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

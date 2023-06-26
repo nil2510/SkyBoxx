@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/view6"
+        style="@style/textbigbold"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="?attr/colorPrimary"
+        android:gravity="center"
+        android:text="Apply with your CV"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/delete1"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view6"
+        app:layout_constraintEnd_toEndOf="@+id/view6"
+        app:layout_constraintTop_toTopOf="@+id/view6">
+
+        <ImageView
+            android:id="@+id/close"
+            style="@style/imageview"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/baseline_close_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </ImageView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:isScrollContainer="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view6">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <TextView
+                    android:id="@+id/textView11"
+                    style="@style/textnormal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:text="Please complete the below form and attach a CV to apply"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/email_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="32dp"
+                    app:boxCornerRadiusBottomEnd="8dp"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:boxCornerRadiusTopStart="8dp"
+                    app:boxStrokeColor="?attr/colorSecondary"
+                    app:boxStrokeErrorColor="@color/red"
+                    app:counterTextColor="?attr/colorSecondary"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="?attr/colorSecondary"
+                    app:errorTextColor="@color/red"
+                    app:hintTextColor="?attr/colorSecondary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView11"
+                    app:startIconDrawable="@drawable/baseline_email_24"
+                    app:startIconTint="?attr/colorSecondary">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter Email"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:textCursorDrawable="@null" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/first_name_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="32dp"
+                    app:boxCornerRadiusBottomEnd="8dp"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:boxCornerRadiusTopStart="8dp"
+                    app:boxStrokeColor="?attr/colorSecondary"
+                    app:boxStrokeErrorColor="@color/red"
+                    app:counterTextColor="?attr/colorSecondary"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="?attr/colorSecondary"
+                    app:errorTextColor="@color/red"
+                    app:hintTextColor="?attr/colorSecondary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/email_layout"
+                    app:startIconDrawable="@drawable/baseline_person_24"
+                    app:startIconTint="?attr/colorSecondary">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/first_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter First Name"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:textCursorDrawable="@null" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/last_name_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="32dp"
+                    app:boxCornerRadiusBottomEnd="8dp"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:boxCornerRadiusTopStart="8dp"
+                    app:boxStrokeColor="?attr/colorSecondary"
+                    app:boxStrokeErrorColor="@color/red"
+                    app:counterTextColor="?attr/colorSecondary"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="?attr/colorSecondary"
+                    app:errorTextColor="@color/red"
+                    app:hintTextColor="?attr/colorSecondary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/first_name_layout"
+                    app:layout_constraintTop_toBottomOf="@+id/first_name_layout"
+                    app:startIconDrawable="@drawable/baseline_person_24"
+                    app:startIconTint="?attr/colorSecondary">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/last_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter Last Name"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:textCursorDrawable="@null" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/number_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="32dp"
+                    app:boxCornerRadiusBottomEnd="8dp"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:boxCornerRadiusTopStart="8dp"
+                    app:boxStrokeColor="?attr/colorSecondary"
+                    app:boxStrokeErrorColor="@color/red"
+                    app:counterTextColor="?attr/colorSecondary"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="?attr/colorSecondary"
+                    app:errorTextColor="@color/red"
+                    app:hintTextColor="?attr/colorSecondary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/last_name_layout"
+                    app:layout_constraintTop_toBottomOf="@+id/last_name_layout"
+                    app:prefixText="+91"
+                    app:startIconDrawable="@drawable/baseline_phone_24"
+                    app:startIconTint="?attr/colorSecondary">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter Phone Number"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:maxLines="1"
+                        android:textCursorDrawable="@null" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/salary_text_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="32dp"
+                    app:boxCornerRadiusBottomEnd="8dp"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:boxCornerRadiusTopStart="8dp"
+                    app:boxStrokeColor="?attr/colorSecondary"
+                    app:boxStrokeErrorColor="@color/red"
+                    app:counterTextColor="?attr/colorSecondary"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="?attr/colorSecondary"
+                    app:errorTextColor="@color/red"
+                    app:hintTextColor="?attr/colorSecondary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/number_layout"
+                    app:layout_constraintTop_toBottomOf="@+id/number_layout"
+                    app:startIconDrawable="@drawable/baseline_currency_rupee_24"
+                    app:startIconTint="?attr/colorSecondary">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/salary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter Current Salary (INR)"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:maxLines="1"
+                        android:textCursorDrawable="@null" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/cv_text"
+                    style="@style/textbig"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginTop="32dp"
+                    android:text="Your CV*"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/salary_text_layout" />
+
+                <TextView
+                    android:id="@+id/cv_type_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="(File Type: pdf,doc)"
+                    android:textColor="@color/red"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/cv_text"
+                    app:layout_constraintStart_toEndOf="@+id/cv_text"
+                    app:layout_constraintTop_toTopOf="@+id/cv_text" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/upload_cv_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:elevation="8dp"
+                    app:layout_constraintEnd_toEndOf="@+id/salary_text_layout"
+                    app:layout_constraintStart_toStartOf="@+id/cv_text"
+                    app:layout_constraintTop_toBottomOf="@+id/cv_text">
+
+                    <TextView
+                        android:id="@+id/select_cv"
+                        android:layout_width="150dp"
+                        android:layout_height="30dp"
+                        android:layout_marginHorizontal="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/cv_shape"
+                        android:gravity="center"
+                        android:hint="Choose file"
+                        android:textColor="@color/red"
+                        android:textSize="14dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/file_name"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:hint="No File Choosen"
+                        android:textColor="@color/green"
+                        android:textSize="15dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/select_cv"
+                        app:layout_constraintStart_toEndOf="@+id/select_cv"
+                        app:layout_constraintTop_toTopOf="@+id/select_cv" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <CheckBox
+                    android:id="@+id/terms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:buttonTint="?attr/colorSecondary"
+                    android:checked="false"
+                    android:gravity="center_vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/upload_cv_layout">
+
+                </CheckBox>
+
+                <TextView
+                    android:id="@+id/terms_text"
+                    style="@style/textnormalbold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:justificationMode="inter_word"
+                    android:text="Terms and condition"
+                    app:layout_constraintEnd_toEndOf="@+id/upload_cv_layout"
+                    app:layout_constraintStart_toEndOf="@+id/terms"
+                    app:layout_constraintTop_toTopOf="@+id/terms" />
+
+                <CheckBox
+                    android:id="@+id/email_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:checked="false"
+                    android:buttonTint="?attr/colorSecondary"
+                    android:gravity="center_vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/terms_text">
+
+                </CheckBox>
+
+                <TextView
+                    android:id="@+id/emailme_text"
+                    style="@style/textnormalbold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Email me more job like this"
+                    app:layout_constraintBottom_toBottomOf="@+id/email_check"
+                    app:layout_constraintEnd_toEndOf="@+id/upload_cv_layout"
+                    app:layout_constraintStart_toEndOf="@+id/email_check"
+                    app:layout_constraintTop_toTopOf="@+id/email_check" />
+
+                <Button
+                    android:id="@+id/apply_now"
+                    style="@style/button"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center"
+                    android:text="Apply Now"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/cv_text"
+                    app:layout_constraintTop_toBottomOf="@+id/email_check" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <FrameLayout
+        android:id="@+id/progress"
+        style="@style/transbackground"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view6">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:backgroundTint="#FFF"
+            android:elevation="4dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="4dp">
+
+            <ProgressBar
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center" />
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

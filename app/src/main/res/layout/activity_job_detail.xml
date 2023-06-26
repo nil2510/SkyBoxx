@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.JobDetailActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/home_toolbar"
+        style="@style/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            style="@style/textbigbold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Job Details">
+
+        </TextView>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/materialCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/cardbackground">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/job_img1"
+                android:layout_width="180dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/job_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/logorecttrans" />
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/company_name"
+                style="@style/textbigbold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:text=""
+                app:layout_constraintEnd_toStartOf="@+id/job_img1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/designation"
+                style="@style/textnormal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="16dp"
+                android:text=""
+                app:layout_constraintEnd_toStartOf="@+id/job_img1"
+                app:layout_constraintStart_toStartOf="@+id/company_name"
+                app:layout_constraintTop_toBottomOf="@+id/company_name" />
+
+            <TextView
+                android:id="@+id/slary"
+                style="@style/textnormal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="16dp"
+                android:text=""
+                app:layout_constraintEnd_toStartOf="@+id/job_img1"
+                app:layout_constraintStart_toStartOf="@+id/designation"
+                app:layout_constraintTop_toBottomOf="@+id/designation" />
+
+            <ImageView
+                android:id="@+id/location_img"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/baseline_location_on_24"
+                android:backgroundTint="?attr/colorSecondary"
+                app:layout_constraintStart_toStartOf="@+id/designation"
+                app:layout_constraintTop_toBottomOf="@+id/slary" />
+
+            <TextView
+                android:id="@+id/location"
+                style="@style/textnormal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="16dp"
+                android:text=""
+                app:layout_constraintEnd_toStartOf="@+id/job_img1"
+                app:layout_constraintStart_toEndOf="@+id/location_img"
+                app:layout_constraintTop_toBottomOf="@+id/slary" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:fillViewport="true"
+        android:isScrollContainer="true"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialCardView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                style="@style/cardbackground"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="32dp"
+                android:layout_marginHorizontal="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/cardbackground"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/qualifications_text"
+                        style="@style/textbigbold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Qualifications:"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/gradutaion"
+                        style="@style/textnormal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text=""
+                        app:layout_constraintStart_toStartOf="@+id/qualifications_text"
+                        app:layout_constraintTop_toBottomOf="@+id/qualifications_text" />
+
+                    <TextView
+                        android:id="@+id/p_gradutaion"
+                        style="@style/textnormal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text=""
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="@+id/qualifications_text"
+                        app:layout_constraintTop_toBottomOf="@+id/gradutaion" />
+
+
+                    <View
+                        android:id="@+id/view4"
+                        style="@style/background"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="12dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/p_gradutaion" />
+
+                    <TextView
+                        android:id="@+id/skills_text"
+                        style="@style/textbigbold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Skill:"
+                        app:layout_constraintStart_toStartOf="@+id/qualifications_text"
+                        app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+                    <TextView
+                        android:id="@+id/skill"
+                        style="@style/textnormal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text=""
+                        app:layout_constraintStart_toStartOf="@+id/skills_text"
+                        app:layout_constraintTop_toBottomOf="@+id/skills_text" />
+
+
+                    <View
+                        android:id="@+id/view8"
+                        style="@style/background"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="12dp"
+                        app:layout_constraintEnd_toEndOf="@+id/view4"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/view4"
+                        app:layout_constraintTop_toBottomOf="@+id/skill" />
+
+                    <TextView
+                        android:id="@+id/job_category_text"
+                        style="@style/textbigbold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Posted Date:"
+                        app:layout_constraintStart_toStartOf="@+id/qualifications_text"
+                        app:layout_constraintTop_toBottomOf="@+id/view8" />
+
+                    <TextView
+                        android:id="@+id/job_time"
+                        style="@style/textnormal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text=""
+                        app:layout_constraintStart_toStartOf="@+id/job_category_text"
+                        app:layout_constraintTop_toBottomOf="@+id/job_category_text" />
+
+
+                    <View
+                        android:id="@+id/view5"
+                        style="@style/background"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="12dp"
+                        app:layout_constraintEnd_toEndOf="@+id/view8"
+                        app:layout_constraintStart_toStartOf="@+id/view8"
+                        app:layout_constraintTop_toBottomOf="@+id/job_time" />
+
+                    <TextView
+                        android:id="@+id/job_dsecrp_text"
+                        style="@style/textbigbold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Job Description:"
+                        app:layout_constraintStart_toStartOf="@+id/job_time"
+                        app:layout_constraintTop_toBottomOf="@+id/view5" />
+
+
+                    <TextView
+                        android:id="@+id/job_descp"
+                        style="@style/textnormal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:justificationMode="inter_word"
+                        android:text=""
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/job_dsecrp_text"
+                        app:layout_constraintTop_toBottomOf="@+id/job_dsecrp_text" />
+
+                    <Button
+                        android:id="@+id/apply_now"
+                        style="@style/button"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="Apply Now"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/job_descp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <FrameLayout
+        android:id="@+id/progress"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        style="@style/transbackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:backgroundTint="#FFF"
+            android:elevation="4dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="4dp">
+
+            <ProgressBar
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:indeterminateTint="@color/yellow"
+                android:layout_gravity="center" />
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

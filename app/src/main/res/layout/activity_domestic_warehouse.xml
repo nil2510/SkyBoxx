@@ -1,0 +1,1020 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Service.DomesticWarehouseActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/home_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/servicename"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Warehouse"
+            android:textColor="@color/white"
+            android:textSize="18dp">
+
+        </TextView>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:isScrollContainer="true"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey">
+
+            <TextView
+                android:id="@+id/quotation_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:text="Quotation required from (Please Select);*"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RadioGroup
+                android:id="@+id/quotation_radiogroup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:orientation="vertical"
+                android:padding="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/quotation_text"
+                app:layout_constraintTop_toBottomOf="@+id/quotation_text"
+                tools:ignore="RedundantNamespace">
+
+                <RadioButton
+                    android:id="@+id/any_vendor_radio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Any Vendor"
+                    android:textSize="16dp"
+                    tools:ignore="OnClick" />
+
+                <RadioButton
+                    android:id="@+id/platinum_radio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Platinum"
+                    android:textSize="16dp"
+                    tools:ignore="OnClick" />
+
+                <RadioButton
+                    android:id="@+id/gold_radio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gold"
+                    android:textSize="16dp"
+                    tools:ignore="OnClick" />
+
+                <RadioButton
+                    android:id="@+id/silver_radio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Silver"
+                    android:textSize="16dp"
+                    tools:ignore="OnClick" />
+
+                <RadioButton
+                    android:id="@+id/standard_radio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Standard"
+                    android:textSize="16dp"
+                    tools:ignore="OnClick" />
+
+            </RadioGroup>
+
+
+            <TextView
+                android:id="@+id/customer_name_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Customer Name*"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="@+id/quotation_radiogroup"
+                app:layout_constraintTop_toBottomOf="@+id/quotation_radiogroup" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/textInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/form_shape"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/customer_name_text"
+                app:layout_constraintTop_toBottomOf="@+id/customer_name_text">
+
+                <EditText
+                    android:id="@+id/customer_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:textColorHint="@color/black"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </EditText>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/customer_address_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Customer Address*"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/textInputLayout1"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/form_shape"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+                app:layout_constraintStart_toStartOf="@+id/customer_name_text"
+                app:layout_constraintTop_toBottomOf="@+id/customer_address_text">
+
+                <EditText
+                    android:id="@+id/customer_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:textColorHint="@color/black"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </EditText>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/mobile_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Mobile*"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayout1"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout1" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/textInputLayout2"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/form_shape"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayout1"
+                app:layout_constraintStart_toStartOf="@+id/mobile_text"
+                app:layout_constraintTop_toBottomOf="@+id/mobile_text">
+
+                <EditText
+                    android:id="@+id/mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@null"
+                    android:inputType="number"
+                    android:maxEms="10"
+                    android:maxLength="10"
+                    android:singleLine="true"
+                    android:textColorHint="@color/black"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </EditText>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/email_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Email*"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/textInputLayout3"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/form_shape"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
+                app:layout_constraintStart_toStartOf="@+id/email_text"
+                app:layout_constraintTop_toBottomOf="@+id/email_text">
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:textColorHint="@color/black"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </EditText>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/web_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Website*"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@+id/mobile_text"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/textInputLayout4"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/form_shape"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayout3"
+                app:layout_constraintStart_toStartOf="@+id/web_text"
+                app:layout_constraintTop_toBottomOf="@+id/web_text">
+
+                <EditText
+                    android:id="@+id/website"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:textColorHint="@color/black"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </EditText>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/description_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Description of Goods*"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayout4"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
+                tools:visibility="visible" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/textInputLayout6"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/form_shape"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayout4"
+                app:layout_constraintStart_toStartOf="@+id/description_text"
+                app:layout_constraintTop_toBottomOf="@+id/description_text">
+
+                <EditText
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:textColorHint="@color/black"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </EditText>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/hazardous_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Hazardous Material*"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayout6"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout6" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/textInputLayout17"
+                android:layout_width="100dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/form_shape"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="@+id/hazardous_text"
+                app:layout_constraintTop_toBottomOf="@+id/hazardous_text">
+
+                <TextView
+                    android:id="@+id/hazardous"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="No"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </TextView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/hazardous_textt"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:text="(We are unable to accept hazardous material for shipment)"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/textInputLayout17"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayout6"
+                app:layout_constraintStart_toEndOf="@+id/textInputLayout17"
+                app:layout_constraintTop_toTopOf="@+id/textInputLayout17">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/origin_address_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Location city*"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@+id/web_text"
+                app:layout_constraintTop_toBottomOf="@+id/hazardous_textt"
+                tools:visibility="visible" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/textInputLayout7"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/form_shape"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayout6"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayout6"
+                app:layout_constraintTop_toBottomOf="@+id/origin_address_text">
+
+                <EditText
+                    android:id="@+id/origin_port"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:textColorHint="@color/black"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </EditText>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/total_warehouse_space_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Total Warehouse Space*"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@+id/origin_address_text"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout7"
+                tools:visibility="visible" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/textInputLayout8"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/form_shape"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayout7"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayout7"
+                app:layout_constraintTop_toBottomOf="@+id/total_warehouse_space_text">
+
+                <EditText
+                    android:id="@+id/total_warehouse_space"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:textColorHint="@color/black"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </EditText>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/office_space_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="office space*"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@+id/total_warehouse_space_text"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout8"
+                tools:visibility="visible" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/textInputLayout13"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/form_shape"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayout8"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayout8"
+                app:layout_constraintTop_toBottomOf="@+id/office_space_text">
+
+                <EditText
+                    android:id="@+id/office_space"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:textColorHint="@color/black"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </EditText>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/covered_space_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Covered Space*"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@+id/total_warehouse_space_text"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout13"
+                tools:visibility="visible" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/textInputLayout14"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/form_shape"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayout13"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayout13"
+                app:layout_constraintTop_toBottomOf="@+id/covered_space_text">
+
+                <EditText
+                    android:id="@+id/net_weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:textColorHint="@color/black"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </EditText>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/open_space_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Open Space*"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayout8"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout14" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/open_space_layout"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/cv_shape"
+                android:elevation="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayout8"
+                app:layout_constraintStart_toStartOf="@+id/open_space_text"
+                app:layout_constraintTop_toBottomOf="@+id/open_space_text">
+
+                <EditText
+                    android:id="@+id/open_space"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:textColorHint="@color/black"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </EditText>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/covere_space_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Covered Space L X W X H*"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@+id/covered_space_text"
+                app:layout_constraintTop_toBottomOf="@+id/open_space_layout"
+                tools:visibility="visible" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/textInputLayout15"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/form_shape"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayout14"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayout14"
+                app:layout_constraintTop_toBottomOf="@+id/covere_space_text">
+
+                <EditText
+                    android:id="@+id/covere_space"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:textColorHint="@color/black"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </EditText>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/number_of_loading_bays_required_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Number of Loading Bays Required*"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@+id/covere_space_text"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout15"
+                tools:visibility="visible" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/textInputLayout16"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/form_shape"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayout15"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayout15"
+                app:layout_constraintTop_toBottomOf="@+id/number_of_loading_bays_required_text">
+
+                <EditText
+                    android:id="@+id/number_of_loading_bays_required"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:textColorHint="@color/black"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </EditText>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/number_of_unloading_bays_required_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Number of Un-Loading Bays Required*"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@+id/number_of_loading_bays_required_text"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout16" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/textInputLayout9"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/form_shape"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayout8"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayout8"
+                app:layout_constraintTop_toBottomOf="@+id/number_of_unloading_bays_required_text">
+
+                <EditText
+                    android:id="@+id/number_of_unloading_bays_required"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:textColorHint="@color/black"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </EditText>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/date_of_possession_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Date of Possession(Likely)*"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@+id/number_of_unloading_bays_required_text"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout9" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/textInputLayout10"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/form_shape"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayout9"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayout9"
+                app:layout_constraintTop_toBottomOf="@+id/date_of_possession_text">
+
+                <EditText
+                    android:id="@+id/date_of_possession"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:textColorHint="@color/black"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </EditText>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/readily_available_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Readily Available*"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/toggleGroup2"
+                app:layout_constraintStart_toStartOf="@+id/date_of_possession_text"
+                app:layout_constraintTop_toTopOf="@+id/toggleGroup2" />
+
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/toggleGroup2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                app:checkedButton="@id/yes"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayout10"
+                app:layout_constraintStart_toEndOf="@+id/readily_available_text"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout10"
+                app:singleSelection="true">
+
+                <Button
+                    android:id="@+id/yes"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:text="Yes" />
+
+                <Button
+                    android:id="@+id/no"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:text="NO" />
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            <TextView
+                android:id="@+id/period_of_intended_lease_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Period of Intended Lease/Contract*"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@+id/readily_available_text"
+                app:layout_constraintTop_toBottomOf="@+id/toggleGroup2" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/textInputLayout12"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/form_shape"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayout10"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayout10"
+                app:layout_constraintTop_toBottomOf="@+id/period_of_intended_lease_text">
+
+                <EditText
+                    android:id="@+id/period_of_intended_lease"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:textColorHint="@color/black"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </EditText>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/deadline_for_quote_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Deadline for Quote*"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@+id/period_of_intended_lease_text"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout12" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/textInputLayout20"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/form_shape"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayout9"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayout9"
+                app:layout_constraintTop_toBottomOf="@+id/deadline_for_quote_text">
+
+                <EditText
+                    android:id="@+id/deadline_for_quote"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@null"
+                    android:focusable="false"
+                    android:hint="YYYY-MM-DD"
+                    android:singleLine="true"
+                    android:textColorHint="@color/grey"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </EditText>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/customer_decision_date_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Customer Decision Date*"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@+id/deadline_for_quote_text"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout20" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/textInputLayout21"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/form_shape"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayout10"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayout10"
+                app:layout_constraintTop_toBottomOf="@+id/customer_decision_date_text">
+
+                <EditText
+                    android:id="@+id/customer_decision_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@null"
+                    android:focusable="false"
+                    android:hint="YYYY-MM-DD"
+                    android:singleLine="true"
+                    android:textColorHint="@color/grey"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </EditText>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/special_istructions_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Special Instructions*"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@+id/customer_decision_date_text"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout21" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/textInputLayout22"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/form_shape"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayout21"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayout21"
+                app:layout_constraintTop_toBottomOf="@+id/special_istructions_text">
+
+                <EditText
+                    android:id="@+id/special_istructions"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@null"
+                    android:singleLine="true"
+                    android:textColorHint="@color/black"
+                    android:textSize="15dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </EditText>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/submit_enquery"
+                android:layout_width="180dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@color/colorSecondary"
+                android:gravity="center"
+                android:text="Submit Enquiry"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayout12"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayout12"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout22" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <FrameLayout
+        android:id="@+id/progress"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_toolbar">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

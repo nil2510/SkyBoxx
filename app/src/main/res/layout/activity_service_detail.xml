@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/background"
+    tools:context=".Activity.ServiceDetailActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/home_toolbar"
+        style="@style/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Service Details"
+            style="@style/textbigbold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_toolbar">
+
+        <ImageView
+            android:id="@+id/job_img"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginHorizontal="16dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logorectblack" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nested_parent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+            android:fillViewport="true"
+            android:isScrollContainer="true"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/job_img">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/location_img"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginTop="8dp"
+                    style="@style/imageview"
+                    android:src="@drawable/baseline_location_on_24"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/location"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:text=""
+                    style="@style/textbigbold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/location_img"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/company_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="8dp"
+                    android:text=""
+                    style="@style/textnormalbold"
+                    app:layout_constraintEnd_toEndOf="@+id/location"
+                    app:layout_constraintStart_toStartOf="@+id/location_img"
+                    app:layout_constraintTop_toBottomOf="@+id/location" />
+
+                <TextView
+                    android:id="@+id/vendor_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text=""
+                    style="@style/textnormal"
+                    app:layout_constraintEnd_toEndOf="@+id/company_name"
+                    app:layout_constraintStart_toStartOf="@+id/company_name"
+                    app:layout_constraintTop_toBottomOf="@+id/company_name" />
+
+                <TextView
+                    android:id="@+id/service_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text=""
+                    style="@style/textnormal"
+                    app:layout_constraintEnd_toEndOf="@+id/vendor_type"
+                    app:layout_constraintStart_toStartOf="@+id/vendor_type"
+                    app:layout_constraintTop_toBottomOf="@+id/vendor_type" />
+
+
+                <View
+                    android:id="@+id/view3"
+                    style="@style/linenormal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/service_name" />
+
+                <TextView
+                    android:id="@+id/consignment_datails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Consignment Details"
+                    style="@style/textbigbold"
+                    app:layout_constraintStart_toStartOf="@+id/location_img"
+                    app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/details_recycle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="12dp"
+                    android:padding="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/consignment_datails"
+                    app:layout_constraintTop_toBottomOf="@+id/consignment_datails" />
+
+
+                <View
+                    android:id="@+id/view4"
+                    style="@style/linenormal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/details_recycle" />
+
+
+                <TextView
+                    android:id="@+id/service_dsecrp_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Service Details"
+                    style="@style/textbigbold"
+                    app:layout_constraintStart_toStartOf="@+id/location_img"
+                    app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+
+                <TextView
+                    android:id="@+id/service_descp_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:justificationMode="inter_word"
+                    android:text="Service Description :"
+                    style="@style/textnormalbold"
+                    app:layout_constraintStart_toStartOf="@+id/service_dsecrp_text"
+                    app:layout_constraintTop_toBottomOf="@+id/service_dsecrp_text" />
+
+
+                <TextView
+                    android:id="@+id/service_descp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="16dp"
+                    android:justificationMode="inter_word"
+                    style="@style/textnormal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/service_dsecrp_text"
+                    app:layout_constraintTop_toBottomOf="@+id/service_descp_text" />
+
+                <TextView
+                    android:id="@+id/offer_validity_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:justificationMode="inter_word"
+                    android:text="Offer validity :"
+                    style="@style/textnormalbold"
+                    app:layout_constraintStart_toStartOf="@+id/service_descp"
+                    app:layout_constraintTop_toBottomOf="@+id/service_descp" />
+
+                <TextView
+                    android:id="@+id/offer_validity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:justificationMode="inter_word"
+                    style="@style/textnormal"
+                    app:layout_constraintBottom_toBottomOf="@+id/offer_validity_text"
+                    app:layout_constraintStart_toEndOf="@+id/offer_validity_text"
+                    app:layout_constraintTop_toTopOf="@+id/offer_validity_text" />
+
+                <Button
+                    android:id="@+id/book_now"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="Book Now"
+                    style="@style/button"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/offer_validity_text" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <FrameLayout
+        android:id="@+id/progress"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        style="@style/transbackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:backgroundTint="#FFF"
+            android:elevation="4dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="4dp">
+
+            <ProgressBar
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center" />
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

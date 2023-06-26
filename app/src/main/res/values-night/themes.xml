@@ -1,0 +1,109 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Base.Theme.SkyBoxx" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/xcolorPrimary</item>
+        <item name="colorPrimaryDark">@color/xcolorPrimaryDark</item>
+        <item name="colorAccent">@color/xcolorAccent</item>
+        <item name="colorSecondary">@color/xcolorSecondary</item>
+
+        <item name="android:statusBarColor">@color/greydarkdark</item>
+    </style>
+
+    <style name="toolbar">
+        <item name="android:background">@drawable/toolbar_bg</item>
+        <item name="android:layout_marginHorizontal">16dp</item>
+        <item name="android:layout_marginVertical">8dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
+
+    <style name="cardbackground">
+        <item name="android:background">@color/black</item>
+    </style>
+    <style name="background">
+        <item name="android:background">@color/greydarkdark</item>
+    </style>
+    <style name="navbackground">
+        <item name="android:backgroundTint">@color/greydarkdark</item>
+    </style>
+    <style name="transbackground">
+        <item name="android:background">@color/translight</item>
+    </style>
+
+    <style name="imageview">
+        <item name="android:tint">@color/white</item>
+    </style>
+
+    <style name="textbigbold">
+<!--        <item name="android:textColor">@color/greylightlight</item>-->
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="textbig">
+<!--        <item name="android:textColor">@color/greylightlight</item>-->
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+    <style name="textnormalbold">
+<!--        <item name="android:textColor">@color/greylightlight</item>-->
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="textnormal">
+<!--        <item name="android:textColor">@color/greylightlight</item>-->
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+    <style name="textsmallbold">
+<!--        <item name="android:textColor">@color/greylightlight</item>-->
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="textsmall">
+<!--        <item name="android:textColor">@color/greylightlight</item>-->
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="linedark">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:background">@color/greylightlight</item>
+    </style>
+    <style name="linenormal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:background">@color/greynormal</item>
+    </style>
+    <style name="linelight">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:background">@color/greydarkdark</item>
+    </style>
+
+    <style name="floatingbutton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:layout_marginBottom">32dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:backgroundTint">@color/xcolorAccent</item>
+        <item name="icon">@drawable/baseline_add_24</item>
+        <item name="iconSize">24dp</item>
+        <item name="iconTint">@color/white</item>
+    </style>
+
+    <style name="button">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:backgroundTint">@color/xcolorSecondary</item>
+    </style>
+    <style name="buttonrev">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+</resources>
