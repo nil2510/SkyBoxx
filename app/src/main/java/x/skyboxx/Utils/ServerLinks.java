@@ -2,9 +2,9 @@ package x.skyboxx.Utils;
 
 public class ServerLinks {
 
-    public static String RBaseUrl = "https://kashvigroup.in/staging/MobileApi/"; /////////////////////Base URL
+    public static String RBaseUrl = "confidencial";
 
-    public static String Authkey = "REALOGIST@2022#$%";
+    public static String Authkey = "confidencial";
 
     public static String register = RBaseUrl + "register";
     public static String verifyEmail = RBaseUrl + "verifyEmail";
@@ -32,10 +32,10 @@ public class ServerLinks {
     public static String changePassword = RBaseUrl + "changePassword";
     public static String commonEnquiry = RBaseUrl + "commonEnquiry";
 
-    public static String signup_terms = "https://realogist.net/staging/MobileApi/page/signup_terms";
-    public static String job_terms = "https://realogist.net/staging/MobileApi/page/job_terms";
-    public static String privacy_policy = "https://realogist.net/staging/MobileApi/page/privacy_policy";
-    public static String about_us = "https://realogist.net/staging/MobileApi/page/about_us";
-    public static String terms_condition = "https://realogist.net/staging/MobileApi/page/terms_condition";
+    public static String signup_terms = "page/signup_terms";
+    public static String job_terms = "page/job_terms";
+    public static String privacy_policy = "page/privacy_policy";
+    public static String about_us = "page/about_us";
+    public static String terms_condition = "page/terms_condition";
 
 }

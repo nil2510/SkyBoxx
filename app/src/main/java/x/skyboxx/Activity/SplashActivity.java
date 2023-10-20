@@ -11,7 +11,6 @@ import x.skyboxx.R;
 import x.skyboxx.Utils.SharedPreferenceClass;
 
 public class SplashActivity extends AppCompatActivity {
-    ImageView realogist;
     SharedPreferenceClass sharedPreferenceClass;
     String user_id;
 
@@ -22,7 +21,6 @@ public class SplashActivity extends AppCompatActivity {
 
         sharedPreferenceClass = new SharedPreferenceClass(SplashActivity.this);
         user_id = sharedPreferenceClass.getValue_string("user_id");
-        realogist = findViewById(R.id.logo);
 
         sharedPreferenceClass.setValue_string("login_now", "no");
 

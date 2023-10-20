@@ -123,6 +123,7 @@ public class JobsFragment extends Fragment {
                 Dept_name = parent.getItemAtPosition(position).toString();
                 Deptid = dept_id.get(position);
                 if (Dept_name.equals("Designation")) {
+
                 } else {
                     job_list_recycle.setVisibility(View.GONE);
                     getjoblist(Countryid, Deptid, Experienceid, educationid);
